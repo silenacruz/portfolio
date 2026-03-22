@@ -22,7 +22,7 @@ async function obtenerDatosGithub() {
     try {
         const respuesta = await fetch(`https://api.github.com/users/${usuario}`);
         
-        if (!respuesta.ok) throw new Error("No se encontro el usuario");
+        if (!respuesta.ok) throw new Error("User not found");
 
         const datos = await respuesta.json();
 
