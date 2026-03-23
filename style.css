@@ -172,38 +172,41 @@ body.dark .skeleton {
 
 @media (max-width: 480px) {
     body {
+        /* Cambiamos min-height a dvh para que se adapte dinámicamente en iPhone */
+        min-height: 100dvh; 
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
         margin: 0;
-        background-attachment: fixed !important; 
-        background-size: 280% !important;
-        background-position: center 30% !important;
-        overflow: hidden;
-        touch-action: none; 
+        /* Quitamos el fixed que rompe iOS y ajustamos el tamaño */
+        background-attachment: scroll !important; 
+        background-size: cover !important;
+        background-position: center center !important;
+        /* Evitamos que el scroll se bloquee si el contenido crece */
+        overflow-y: auto; 
+        touch-action: auto; 
     }
+
     body.dark {
-        background-attachment: fixed !important;
-        background-size: 280% !important;
-        background-position: center 30% !important;
+        background-attachment: scroll !important;
+        background-size: cover !important;
     }
 
     .card {
-        width: 80%;
+        width: 85%;
         max-width: 320px;
-        background: rgba(255, 255, 255, 0.85) !important;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        
+        padding: 30px 20px;
+        background: rgba(255, 255, 255, 0.9) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.3);
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        margin: 0; 
         position: relative;
+        margin: 20px auto; 
     }
 
     body.dark .card {
-        background: rgba(22, 33, 62, 0.85) !important;
+        background: rgba(22, 33, 62, 0.9) !important;
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
