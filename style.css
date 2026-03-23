@@ -172,41 +172,28 @@ body.dark .skeleton {
 
 @media (max-width: 480px) {
     body {
-        /* Cambiamos min-height a dvh para que se adapte dinámicamente en iPhone */
-        min-height: 100dvh; 
+        min-height: 100dvh;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0;
-        /* Quitamos el fixed que rompe iOS y ajustamos el tamaño */
         background-attachment: scroll !important; 
         background-size: cover !important;
-        background-position: center center !important;
-        /* Evitamos que el scroll se bloquee si el contenido crece */
         overflow-y: auto; 
-        touch-action: auto; 
     }
 
-    body.dark {
-        background-attachment: scroll !important;
-        background-size: cover !important;
+   body.dark {
+        background: url("assets/background_dark_mode.png") no-repeat center / cover fixed #1a1a2e !important;
     }
 
     .card {
         width: 85%;
-        max-width: 320px;
-        padding: 30px 20px;
-        background: rgba(255, 255, 255, 0.9) !important;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        position: relative;
-        margin: 20px auto; 
+        background: rgba(255, 255, 255, 0.85) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
     }
 
     body.dark .card {
-        background: rgba(22, 33, 62, 0.9) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(22, 33, 62, 0.85) !important;
+        color: #45e97c;
     }
 }
