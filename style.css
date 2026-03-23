@@ -146,18 +146,39 @@ body.dark input, body.dark textarea {
     100% { background-position: 200% 0; }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 480px) {
   body {
-    justify-content: center;
-    padding-left: 0;
-    /* En móvil, mejor que la caricatura esté de fondo suave o centrada */
-    background-position: center;
+    background-size: 180%;
+    background-position: center 20%;
+    
+    padding-left: 0; 
+    justify-content: center; 
+    padding: 20px;
   }
-  
+
   .card {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: none;
+    padding: 30px 20px;
+    backdrop-filter: blur(10px);
   }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .floating-btn {
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+  }
+}
+
+body.dark {
+    background-size: 180%;
+    background-position: center 20%;
 }
 
 .skeleton {
